@@ -405,6 +405,356 @@
             transform: scale(1.02);
         }
 
+        .plan-card.featured.conversion-card {
+            isolation: isolate;
+            border: 1px solid transparent;
+            background: #FFFFFF;
+            padding: 30px 18px;
+            box-shadow: 0 24px 55px rgba(234, 29, 44, 0.16);
+        }
+
+        .conversion-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            z-index: -2;
+            border-radius: 26px;
+            background: linear-gradient(135deg, #ea1d2c, #ff5252);
+        }
+
+        .conversion-card::after {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            z-index: -1;
+            border-radius: 20px;
+            background: #FFFFFF;
+        }
+
+        .conversion-card .plan-badge {
+            position: static;
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: -8px 0 20px;
+            padding: 8px 13px;
+            border-radius: 0 0 12px 12px;
+            background: #ea1d2c;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+        }
+
+        .conversion-card .plan-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            animation: conversion-pulse 1.8s infinite;
+        }
+
+        @keyframes conversion-pulse {
+            70% { box-shadow: 0 0 0 7px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .conversion-card .plan-name {
+            font-size: clamp(1.5rem, 6vw, 2.2rem);
+            line-height: 1.12;
+            margin-bottom: 12px;
+        }
+
+        .conversion-card .plan-name span {
+            display: inline-block;
+            color: #ea1d2c !important;
+        }
+
+        .conversion-card .plan-desc {
+            min-height: 0;
+            max-width: 680px;
+            font-size: 1rem;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        .conversion-card .plan-price {
+            margin-bottom: 22px;
+            padding: 18px 0 20px;
+            border-top: 1px solid #fee2e2;
+            border-bottom: 1px solid #fee2e2;
+        }
+
+        .conversion-card .price {
+            color: #0f172a;
+            font-size: clamp(2.7rem, 13vw, 4.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+
+        .conversion-card .price small {
+            display: block;
+            margin-top: 10px;
+            color: #ea1d2c;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .conversion-card .price-rules {
+            margin-top: 12px;
+            color: #475569;
+        }
+
+        .conversion-deliverables {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .deliverable-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            padding: 12px;
+            border: 1px solid #fee2e2;
+            border-radius: 14px;
+            background: #fffafa;
+        }
+
+        .deliverable-icon {
+            display: grid;
+            flex: 0 0 38px;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: #fff1f2;
+            color: #ea1d2c;
+        }
+
+        .deliverable-icon svg { width: 21px; height: 21px; }
+        .deliverable-card strong { display: block; color: #0f172a; font-size: 0.86rem; }
+        .deliverable-card small { display: block; color: #64748b; font-size: 0.74rem; line-height: 1.3; }
+
+        .conversion-card .features-list {
+            margin-bottom: 26px;
+        }
+
+        .conversion-card .features-list li {
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 13px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .conversion-check {
+            display: grid;
+            flex: 0 0 22px;
+            place-items: center;
+            width: 22px;
+            height: 22px;
+            margin-top: -1px;
+            border-radius: 50%;
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .conversion-check svg { width: 14px; height: 14px; }
+
+        .conversion-card .btn-whatsapp-buy {
+            min-height: 56px;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #ea1d2c, #ff5252) !important;
+            box-shadow: 0 12px 24px rgba(234, 29, 44, 0.22);
+            font-size: 0.86rem;
+            letter-spacing: 0.03em;
+        }
+
+        .conversion-card .btn-whatsapp-buy svg { width: 22px; height: 22px; flex: 0 0 auto; }
+
+        @media (min-width: 600px) {
+            .plan-card.featured.conversion-card { padding: 34px 28px; }
+            .conversion-deliverables { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .plan-card.offer-card {
+            --accent: #0ea5e9;
+            --accent-soft: #38bdf8;
+            --accent-bg: #f0f9ff;
+            isolation: isolate;
+            border: 1px solid transparent;
+            background: #FFFFFF;
+            padding: 30px 18px;
+            box-shadow: 0 20px 45px color-mix(in srgb, var(--accent) 18%, transparent);
+        }
+
+        .offer-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            z-index: -2;
+            border-radius: 26px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            filter: blur(0);
+        }
+
+        .offer-card::after {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            z-index: -1;
+            border-radius: 20px;
+            background: #FFFFFF;
+        }
+
+        .offer-card .plan-badge {
+            position: static;
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: -8px 0 20px;
+            padding: 8px 13px;
+            border-radius: 0 0 12px 12px;
+            background: var(--accent);
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+        }
+
+        .offer-card .plan-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 0 color-mix(in srgb, #FFFFFF 70%, transparent);
+            animation: conversion-pulse 1.8s infinite;
+        }
+
+        .offer-card .plan-name {
+            font-size: clamp(1.4rem, 5vw, 2rem);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .offer-card .plan-price {
+            margin-bottom: 24px;
+            padding: 18px 0 20px;
+            border-top: 1px solid color-mix(in srgb, var(--accent) 22%, #FFFFFF);
+            border-bottom: 1px solid color-mix(in srgb, var(--accent) 22%, #FFFFFF);
+        }
+
+        .offer-card .price {
+            color: #0f172a;
+            font-size: clamp(2.45rem, 10vw, 3.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+
+        .offer-card .price small {
+            display: inline-block;
+            margin-left: 4px;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .offer-card .features-list li {
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 13px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .offer-card .features-list i {
+            display: inline-grid;
+            flex: 0 0 22px;
+            place-items: center;
+            width: 22px;
+            height: 22px;
+            margin-top: -1px;
+            border-radius: 50%;
+            background: var(--accent-bg);
+            color: var(--accent);
+            font-size: 0.75rem;
+        }
+
+        .offer-card .features-list li.disabled i {
+            background: #f1f5f9;
+            color: #94a3b8;
+        }
+
+        .offer-card .btn-whatsapp-buy {
+            min-height: 56px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            box-shadow: 0 12px 24px color-mix(in srgb, var(--accent) 24%, transparent);
+            font-size: 0.84rem;
+        }
+
+        .offer-card .btn-whatsapp-buy:hover {
+            background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+        }
+
+        .offer-card.accent-amber {
+            --accent: #d97706;
+            --accent-soft: #f59e0b;
+            --accent-bg: #fffbeb;
+        }
+
+        .offer-card.accent-emerald {
+            --accent: #059669;
+            --accent-soft: #10b981;
+            --accent-bg: #ecfdf5;
+        }
+
+        .offer-card.accent-red {
+            --accent: #ea1d2c;
+            --accent-soft: #ff5252;
+            --accent-bg: #fff1f2;
+        }
+
+        @media (min-width: 600px) {
+            .plan-card.offer-card { padding: 34px 28px; }
+        }
+
+        @media (min-width: 769px) {
+            .plans-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 24px;
+            }
+
+            .plans-grid > .plan-card.featured {
+                grid-column: span 2;
+                transform: none;
+            }
+        }
+
+        .hero > .container > .plans-section {
+            width: calc(100% + 48px);
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+
+        @media (max-width: 768px) {
+            .hero > .container > .plans-section {
+                width: calc(100% + 32px);
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+        }
+
         .plan-badge {
             position: absolute;
             top: -14px;
@@ -1712,7 +2062,7 @@
 
             <div class="plans-grid">
 
-                <div class="plan-card featured">
+                <div class="plan-card featured conversion-card offer-card accent-red">
                     <div class="plan-badge">Aprenda Agora</div>
                     <h3 class="plan-name">Curso: Clone do iFood <span style="color: var(--primary);">+
                             Código-Fonte</span></h3>
@@ -1720,42 +2070,67 @@
                         Ganhe dinheiro vendendo aplicativos ou operando na sua região.</p>
 
                     <div class="plan-price">
-                        <div class="price">R$ 497<small> investimento único</small></div>
+                        <div class="price">R$ 697<small> investimento único</small></div>
                         <div class="price-rules">Melhor forma de <strong>ganhar dinheiro em 2026</strong> • Sem
                             experiência em programação</div>
                     </div>
 
+                    <div class="conversion-deliverables" aria-label="Sistemas entregues">
+                        <div class="deliverable-card">
+                            <span class="deliverable-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="7" y="2.5" width="10" height="19" rx="2"></rect>
+                                    <path d="M10 5h4M11 18.5h2"></path>
+                                </svg>
+                            </span>
+                            <span><strong>App do Cliente</strong><small>Pedidos e acompanhamento</small></span>
+                        </div>
+                        <div class="deliverable-card">
+                            <span class="deliverable-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                                    <path d="M8 22h8M12 19v3M7 8h10M7 12h4"></path>
+                                </svg>
+                            </span>
+                            <span><strong>Painel Web Admin</strong><small>Gestão total do negócio</small></span>
+                        </div>
+                        <div class="deliverable-card">
+                            <span class="deliverable-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M3 10.5 12 3l9 7.5"></path>
+                                    <path d="M5 9.5V21h14V9.5M9 21v-6h6v6M8 11h8"></path>
+                                </svg>
+                            </span>
+                            <span><strong>Painel da Loja</strong><small>Cardápio e pedidos</small></span>
+                        </div>
+                    </div>
+
                     <ul class="features-list">
-                        <li><i class="fa-solid fa-check"></i><span><strong>Curso passo a passo completo</strong> para
-                                iniciantes (Zero conhecimento em programação)</span></li>
-                        <li><i class="fa-solid fa-check"></i><span><strong>Código-fonte 100% seu</strong> - Replicar,
-                                copiar, vender ou licenciar sem limites</span></li>
-                        <li><i class="fa-solid fa-check"></i><span><strong>1 Live Privada por mês</strong> (2 horas) -
-                                Tire todas as dúvidas de negócio e técnicas</span></li>
-                        <li><i class="fa-solid fa-check"></i><span><strong>Suporte Total durante o mês</strong> - Ajuda
-                                para colocar seu app no ar com segurança</span></li>
-                        <li><i class="fa-solid fa-check"></i><span><strong>100% de domínio do aplicativo</strong> - Você
-                                é o dono absoluto, sem taxas recorrentes</span></li>
-                        <li><i class="fa-solid fa-check"></i><span>Múltiplas formas de ganhar: Vender apps, operar no
-                                seu bairro, montar franquia digital</span></li>
-                        <li><i class="fa-solid fa-check"></i><span>Comunidade exclusiva de empreendedores ganhando
-                                dinheiro com delivery</span></li>
+                        <li><span class="conversion-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"></path></svg></span><span><strong>Curso passo a passo completo</strong> para iniciantes</span></li>
+                        <li><span class="conversion-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"></path></svg></span><span><strong>Código-fonte 100% seu</strong> para adaptar, vender ou licenciar</span></li>
+                        <li><span class="conversion-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"></path></svg></span><span><strong>Live privada mensal</strong> com duas horas de suporte</span></li>
+                        <li><span class="conversion-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"></path></svg></span><span><strong>Suporte durante o mês</strong> para colocar seu app no ar</span></li>
+                        <li><span class="conversion-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"></path></svg></span><span><strong>Domínio do aplicativo</strong> e múltiplas formas de lucrar</span></li>
                     </ul>
 
-                    <a href="https://wa.me/5598983233310?text=Olá+Abraão,+quero+fazer+o+curso+Clone+do+iFood+%2B+Código-Fonte+de+R$497.+Como+funciona?"
+                    <a href="https://wa.me/5598983233310?text=Olá+Abraão,+quero+fazer+o+curso+Clone+do+iFood+%2B+Código-Fonte+de+R$697.+Como+funciona?"
                         target="_blank" class="btn-whatsapp-buy"
                         style="background-color: var(--primary); font-size: 1.05rem;">
-                        <i class="fa-brands fa-whatsapp"></i> COMEÇAR AGORA - GANHAR DINHEIRO
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2a9.8 9.8 0 0 0-8.49 14.7L2.02 22l5.43-1.42A9.8 9.8 0 1 0 12 2Zm0 17.9a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.22.84.86-3.13-.2-.32A8.1 8.1 0 1 1 12 19.9Zm4.43-5.98c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28Z"></path>
+                        </svg>
+                        COMEÇAR AGORA - GANHAR DINHEIRO
                     </a>
                 </div>
 
-                <div class="plan-card">
+                <div class="plan-card offer-card accent-blue">
+                    <div class="plan-badge">Comece na sua cidade</div>
                     <h3 class="plan-name">Franquia Local</h3>
                     <p class="plan-desc">Valide o mercado rapidamente operando com a bandeira Qi Delícia na sua cidade
                         exclusiva.</p>
 
                     <div class="plan-price">
-                        <div class="price">R$ 159<small>,90/mês</small></div>
+                        <div class="price">R$ 349,90<small>,90/mês</small></div>
                         <div class="price-rules">+ R$ 0,25 por pedido realizado</div>
                     </div>
 
@@ -1774,13 +2149,14 @@
                                 código-fonte</span></li>
                     </ul>
 
-                    <a href="https://wa.me/5598983233310?text=Olá+Abraão,+quero+fechar+o+plano+Franquia+Local+de+R$159,90+para+a+minha+cidade."
+                    <a href="https://wa.me/5598983233310?text=Olá+Abraão,+quero+fechar+o+plano+Franquia+Local+de+R$349,90+para+a+minha+cidade."
                         target="_blank" class="btn-whatsapp-buy">
                         <i class="fa-brands fa-whatsapp"></i> Comprar Franquia Local
                     </a>
                 </div>
 
-                <div class="plan-card">
+                <div class="plan-card offer-card accent-amber">
+                    <div class="plan-badge">Sua marca em destaque</div>
                     <h3 class="plan-name">Franquia Custom</h3>
                     <p class="plan-desc">Sua própria marca e identidade rodando na nossa infraestrutura estável de
                         servidores.</p>
@@ -1812,14 +2188,14 @@
                     </a>
                 </div>
 
-                <div class="plan-card featured" style="grid-column: span 2;">
+                <div class="plan-card featured offer-card accent-emerald" style="grid-column: span 2;">
                     <div class="plan-badge">Independência Total</div>
                     <h3 class="plan-name">Dono do Aplicativo</h3>
                     <p class="plan-desc">Domínio completo do ecossistema. 100% seu, sem taxas recorrentes, royalties ou
                         limites.</p>
 
                     <div class="plan-price">
-                        <div class="price">R$ 4.899<small> único</small></div>
+                        <div class="price">R$ 5.899<small> único</small></div>
                         <div class="price-rules"><strong>SEM MENSALIDADES</strong> | Lucro 100% seu</div>
                     </div>
 
@@ -1838,7 +2214,7 @@
                                     realizado</strong></span></li>
                     </ul>
 
-                    <a href="https://wa.me/5598983233310?text=Olá+Abraão,+quero+adquirir+o+Código+Fonte+e+a+versão+Dono+do+Aplicativo+de+R$4.899."
+                    <a href="https://wa.me/5598983233310?text=Olá+Abraão,+quero+adquirir+o+Código+Fonte+e+a+versão+Dono+do+Aplicativo+de+R$5.899."
                         target="_blank" class="btn-whatsapp-buy" style="background-color: var(--primary);">
                         <i class="fa-brands fa-whatsapp"></i> Adquirir Código-Fonte
                     </a>
@@ -1975,6 +2351,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const plansSection = document.querySelector("#planos");
+            const demoVideos = document.querySelector(".demo-videos-container");
+
+            if (plansSection && demoVideos) {
+                demoVideos.before(plansSection);
+            }
+
             // --- CARROSSEL DE PLANOS MOBILE ---
             const plansGrid = document.querySelector(".plans-grid");
             const dots = document.querySelectorAll(".slider-dots .dot");
